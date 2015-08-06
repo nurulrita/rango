@@ -11,7 +11,8 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^rango/', include('rango.urls')), # untuk menghubungkan urls.py yang ada di app
-    url(r'^about$', views.about, name='about')),
+    url(r'^about$', views.about, name='about'),
+    (r'^accounts/', include('registration.backends.simple.urls')),
 )
 
 if not settings.DEBUG:
