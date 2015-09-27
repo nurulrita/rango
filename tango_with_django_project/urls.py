@@ -11,6 +11,7 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^$', views.index, name='home'),
     url(r'^rango/', include('rango.urls')), # untuk menghubungkan urls.py yang ada di app
     url(r'^about$', views.about, name='about'),
     (r'^accounts/', include('registration.backends.simple.urls')),
@@ -31,10 +32,3 @@ class MyRegistrationView(RegistrationView):
         return '/rango/'
 
 
-urlpatterns = patterns('',
-    url(r'^admin/', include(admin.site.urls)),
-    url(r'^rango/', include('rango.urls')),
-        #Add in this url pattern to override the default pattern in accounts.
-    url(r'^accounts/register/$', MyRegistrationView.as_view(), name='registration_register'),
-    (r'^accounts/', include('registration.backends.simple.urls')),
-)
