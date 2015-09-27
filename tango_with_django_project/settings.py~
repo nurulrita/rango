@@ -20,11 +20,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = 'k=-#w$^i&sj117xfz2v7%oku*-4g!4&cx@t6&ho_65xwg&*#=7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['nuthanu.pythonanywhere.com']
 
 TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates')
 
@@ -57,6 +57,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'rango',
     'registration',
+    'portofolio',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -108,10 +109,10 @@ PASSWORD_HASHERS = (
 'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
 )
 
-LOGIN_URL = '/rango/login/'
+LOGIN_URL = '/accounts/login/'
 
-REGISTRATION_OPEN = True                
-ACCOUNT_ACTIVATION_DAYS = 7     
-REGISTRATION_AUTO_LOGIN = True  
-LOGIN_REDIRECT_URL = '/rango/'  
+REGISTRATION_OPEN = True
+ACCOUNT_ACTIVATION_DAYS = 7
+REGISTRATION_AUTO_LOGIN = True
+LOGIN_REDIRECT_URL = '/rango/'
 LOGIN_URL = '/accounts/login/'

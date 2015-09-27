@@ -7,12 +7,13 @@ from registration.backends.simple.views import RegistrationView
 
 urlpatterns = patterns('',
     # Examples:
-    # url(r'^$', 'tango_with_django_project.views.home', name='home'),
+    url(r'^$', 'portofolio.views.index', name='index'),
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', views.index, name='home'),
     url(r'^rango/', include('rango.urls')), # untuk menghubungkan urls.py yang ada di app
+    url(r'^portofolio/', include('portofolio.urls')),
     url(r'^about$', views.about, name='about'),
     (r'^accounts/', include('registration.backends.simple.urls')),
 )
